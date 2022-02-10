@@ -1,8 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+
+// css
+import './index.css';
+
+// pages
+import Home from './components/home/Home';
+import Connection from './components/connection/Connection';
+import LayoutHome from './components/layout/LayoutHome';
+
+import FilmList from './components/film-list/filmList';
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LayoutHome />}>
+          <Route index element={<Home />} />
+          <Route path="connection" element={<Connection />} />
+        </Route>
+      </Routes>
+
+      {/* <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="connection" element={<Connection />} />
+          <Route path="films" element={<FilmList />} />
+        </Route>
+      </Routes> */}
+    </BrowserRouter>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +41,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
