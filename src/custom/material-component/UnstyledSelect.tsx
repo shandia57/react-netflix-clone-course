@@ -32,6 +32,7 @@ const StyledButton = styled('button')`
     content: '▾';
     float: right;
   }
+
 `;
 
 const StyledListbox = styled('ul')`
@@ -86,21 +87,21 @@ const StyledPopper = styled(PopperUnstyled)`
 `;
 
 const CustomSelect = React.forwardRef(function CustomSelect(props: any, ref: any) {
-    const components = {
-        Root: StyledButton,
-        Listbox: StyledListbox,
-        Popper: StyledPopper,
-        ...props.components,
-    };
+  const components = {
+    Root: StyledButton,
+    Listbox: StyledListbox,
+    Popper: StyledPopper,
+    ...props.components,
+  };
 
-    return <SelectUnstyled {...props} ref={ref} components={components} />;
+  return <SelectUnstyled {...props} ref={ref} components={components} />;
 });
 
 export default function UnstyledSelectSimple() {
-    return (
-        <CustomSelect defaultValue={10}>
-            <StyledOption value={10}> <FontAwesomeIcon icon={faGlobe} /> Français</StyledOption>
-            <StyledOption value={20}> <FontAwesomeIcon icon={faGlobe} /> English</StyledOption>
-        </CustomSelect>
-    );
+  return (
+    <CustomSelect defaultValue={10}>
+      <StyledOption value={10}> <FontAwesomeIcon icon={faGlobe} /> Français</StyledOption>
+      <StyledOption value={20}> <FontAwesomeIcon icon={faGlobe} /> English</StyledOption>
+    </CustomSelect>
+  );
 }

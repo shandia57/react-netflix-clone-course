@@ -1,0 +1,58 @@
+@media screen and (max-width: 500px){
+    .overlay{
+        padding: 1%;
+    }
+    
+    nav{
+        text-align: center;
+    }
+    .logoContainer{
+        width: 30%;
+        margin-top:10px;
+        margin-right:10px;
+        vertical-align: middle;
+    }
+    
+    .containerRight{
+        float: none;
+    }
+    
+    .containerRight div + div{
+        margin-left: 10px;
+    }
+    
+    .mainContainer{
+        width:100%;
+        transform: translateY(20%);
+    }
+    
+    h1{
+        font-size: 2em;
+        font-weight:800;
+
+    }
+    h2{
+        font-size: 1.2em;
+        font-weight:500;
+        margin-top:10%;
+    }
+    h3{
+        margin-top:10%;
+        font-size: 1.2em;
+        font-weight:600;
+
+    }
+
+    .inputEmail{
+        width:90%;
+
+    }
+    
+    .buttonStart{
+        width:50%;
+        height:40px;
+        font-size: 1em;
+        transform: translateY(50%);
+    }
+
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './home.css';
+import './css/home.css';
+import './css/home-mobile.css';
+import './css/home-tab.css';
 
 import logo2 from '../../../assets/images/logo2.svg';
 import Button from '@mui/material/Button';
@@ -41,6 +43,7 @@ class Home extends Component {
                                 <CustomButton
                                     variant="contained"
                                     color="primary"
+                                    className="buttonLogin"
                                 >S'identifier
                                 </CustomButton>
                             </div>
@@ -56,7 +59,7 @@ class Home extends Component {
                         <div className="formContainer">
                             <TextField size="medium" color="warning" className="inputEmail" label="Adresse e-mail" variant="standard" />
 
-                            <CustomButton variant="contained" endIcon={<FontAwesomeIcon icon={faAngleRight} />} className="buttonStart" >Commencer</CustomButton>
+                            <Button variant="contained" endIcon={<FontAwesomeIcon icon={faAngleRight} />} className="buttonStart" >Commencer</Button>
                         </div>
                     </div>
                 </div>
