@@ -9,8 +9,16 @@ import { styled } from '@mui/material/styles';
 
 import UnstyledSelectSimple from './../../../custom/material-component/UnstyledSelect';
 import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+
+
+
+// il8n
+import { Il8nProvider, LOCALES } from '../../../il8n';
+import translate from '../../../il8n/translate';
 
 
 
@@ -24,50 +32,65 @@ const CustomButton = styled(Button)(() => ({
 
 class Home extends Component {
 
+    state = {
+        currentLanguage: LOCALES.FRENCH,
+    }
 
+    handleChange = (event: React.FormEvent) => {
+        console.log("coucu")
+        this.setState({ currentLanguage: (event.target as HTMLInputElement).value });
+        console.log(this.state)
+    }
 
     render() {
         return (
-            <div id="App" className="background">
-                <div className="overlay">
-                    <nav className="home-nav">
-                        <div className="logoContainer">
-                            <img className="logo" src={logo2} />
-                        </div>
-
-                        <div className="containerRight">
-                            <div>
-                                <UnstyledSelectSimple />
+            <Il8nProvider locale={this.state.currentLanguage}>
+                <div id="App" className="background">
+                    <div className="overlay">
+                        <nav className="home-nav">
+                            <div className="logoContainer">
+                                <img className="logo" src={logo2} />
                             </div>
-                            <div>
-                                <CustomButton
-                                    variant="contained"
-                                    color="primary"
-                                    className="buttonLogin"
-                                >S'identifier
-                                </CustomButton>
+
+                            <div className="containerRight">
+                                <div>
+                                    <Select
+                                        value={this.state.currentLanguage}
+                                        onChange={(event) => {
+                                            this.setState({ currentLanguage: event.target.value });
+                                        }}
+                                    >
+                                        <MenuItem value={LOCALES.FRENCH}>Français</MenuItem>
+                                        <MenuItem value={LOCALES.ENGLISH}>English</MenuItem>
+                                    </Select>
+                                </div>
+                                <div>
+                                    <CustomButton
+                                        variant="contained"
+                                        color="primary"
+                                        className="buttonLogin"
+                                    > {translate("signin")}
+                                    </CustomButton>
+                                </div>
                             </div>
-                        </div>
-                    </nav >
+                        </nav >
 
-                    <div className="mainContainer">
-                        <div className="containerTitles">
-                            <h1>Films, séries TV et bien plus en illimité.</h1>
-                            <h2>Où que vous soyez. Annulez à tout moment.</h2>
-                            <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
-                        </div>
-                        <div className="formContainer">
-                            <TextField size="medium" color="warning" className="inputEmail" label="Adresse e-mail" variant="standard" />
+                        <div className="mainContainer">
+                            <div className="containerTitles">
+                                <h1>{translate("homeH1")}</h1>
+                                <h2>{translate("homeH2")}</h2>
+                                <h3>{translate("homeH3")}</h3>
+                            </div>
+                            <div className="formContainer">
+                                <TextField size="medium" color="warning" className="inputEmail" label={translate("emailAddress")} variant="standard" />
 
-                            <Button variant="contained" endIcon={<FontAwesomeIcon icon={faAngleRight} />} className="buttonStart" >Commencer</Button>
+                                <Button variant="contained" endIcon={<FontAwesomeIcon icon={faAngleRight} />} className="buttonStart" >{translate("getStarted")}</Button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-
-
-
-            </div >
+                </div >
+            </Il8nProvider>
         )
     }
 }

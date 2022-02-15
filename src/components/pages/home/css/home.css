@@ -44,6 +44,8 @@ h1{
     font-size: 4em;
     font-weight:800;
     margin:0;
+    text-transform: "capitalize"
+
 }
 h2{
     font-size: 1.7em;
@@ -52,8 +54,9 @@ h2{
 h3{
     font-size: 1.2em;
 }
-
-
+.optionInput{
+    color: white;
+}
 .formContainer{
     margin-top: 20px;
 }
