@@ -16,8 +16,6 @@ import FilmList from './components/pages/film-list/filmList';
 import theme from './custom/theme/theme';
 
 
-
-
 class App extends Component {
     render() {
         return (
