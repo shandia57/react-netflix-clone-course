@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 // HOOK
 import { useState } from "react";
 
@@ -6,8 +8,11 @@ import './css/home.css';
 import './css/home-mobile.css';
 import './css/home-tab.css';
 
-// Component 
+
 import logo2 from '../../../assets/images/logo2.svg';
+import globe from '../../../assets/images/globe-solid.svg';
+
+// Component 
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
@@ -16,8 +21,10 @@ import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import LanguageIcon from "@mui/icons-material/Language";
 
 
 // il8n
@@ -34,8 +41,11 @@ const CustomButton = styled(Button)(() => ({
 }));
 
 
+
+
 const Home = () => {
     const [currentLanguage, setCurrentLanguage] = useState(LOCALES.FRENCH);
+
     return (
         <Il8nProvider locale={currentLanguage}>
             <div id="App" className="background">
@@ -46,16 +56,18 @@ const Home = () => {
                         </div>
 
                         <div className="containerRight">
-                            <div>
-                                <Select
+
+                            <div className="select-menu">
+                                <FontAwesomeIcon className="iconGlobe" icon={faGlobe} />
+                                <select
                                     value={currentLanguage}
                                     onChange={(event) => {
                                         setCurrentLanguage(event.target.value);
                                     }}
                                 >
-                                    <MenuItem value={LOCALES.FRENCH}>Français</MenuItem>
-                                    <MenuItem value={LOCALES.ENGLISH}>English</MenuItem>
-                                </Select>
+                                    <option value={LOCALES.FRENCH}>Français</option>
+                                    <option value={LOCALES.ENGLISH}>English</option>
+                                </select>
                             </div>
                             <div>
                                 <CustomButton
