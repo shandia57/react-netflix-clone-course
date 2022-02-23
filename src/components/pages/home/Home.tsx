@@ -1,36 +1,27 @@
-import { Fragment } from 'react';
-
 // HOOK
 import { useState } from "react";
+
 
 // CSS
 import './css/home.css';
 import './css/home-mobile.css';
 import './css/home-tab.css';
 
-
 import logo2 from '../../../assets/images/logo2.svg';
-import globe from '../../../assets/images/globe-solid.svg';
 
 // Component 
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 
-import UnstyledSelectSimple from './../../../custom/material-component/UnstyledSelect';
-import TextField from '@mui/material/TextField';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+// icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import LanguageIcon from "@mui/icons-material/Language";
-
 
 // il8n
 import { Il8nProvider, LOCALES } from '../../../il8n';
 import translate from '../../../il8n/translate';
-
 
 
 const CustomButton = styled(Button)(() => ({
@@ -39,9 +30,6 @@ const CustomButton = styled(Button)(() => ({
         textTransform: "capitalize",
     },
 }));
-
-
-
 
 const Home = () => {
     const [currentLanguage, setCurrentLanguage] = useState(LOCALES.FRENCH);
