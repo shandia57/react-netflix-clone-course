@@ -34,6 +34,7 @@ const CustomButton = styled(Button)(() => ({
 const Home = () => {
     const [currentLanguage, setCurrentLanguage] = useState(LOCALES.FRENCH);
 
+
     return (
         <Il8nProvider locale={currentLanguage}>
             <div id="App" className="background">
