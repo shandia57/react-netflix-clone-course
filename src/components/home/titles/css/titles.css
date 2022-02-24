@@ -1,0 +1,16 @@
+h1{
+    font-size: 4em;
+    font-weight:800;
+    margin: 0 0 5% 0;
+    text-transform: "capitalize"
+
+}
+h2{
+    font-size: 1.7em;
+    margin: 0 0 5% 0;
+    
+}
+h3{
+    font-size: 1.2em;
+    margin: 0 0 5% 0;
+}

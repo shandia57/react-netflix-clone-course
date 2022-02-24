@@ -12,9 +12,9 @@ import { Il8nProvider } from './il8n';
 import LayoutHome from './components/layout/LayoutHome';
 
 // pages
-import Home from './components/pages/home/Home';
-import Connection from './components/pages/connection/Connection';
-import FilmList from './components/pages/film-list/filmList';
+import Home from './pages/home/Home';
+import Connection from './pages/connection/Connection';
+import FilmList from './pages/film-list/filmList';
 
 // Theme
 import theme from './custom/theme/theme';
@@ -25,6 +25,7 @@ const App = () => {
     const appLanguage = useAppSelector((state) => state.language.appLanguage);
     return (
         <>
+
             <ThemeProvider theme={theme}>
                 <Il8nProvider locale={appLanguage}>
                     <BrowserRouter>
@@ -46,6 +47,7 @@ const App = () => {
                 </Il8nProvider>
 
             </ThemeProvider>
+
         </>
 
 

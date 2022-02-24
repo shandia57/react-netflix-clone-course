@@ -1,4 +1,4 @@
 export const LOCALES = {
-    ENGLISH: "en-us",
-    FRENCH: "fr-fr",
+    ENGLISH: "en-US",
+    FRENCH: "fr-FR",
 }

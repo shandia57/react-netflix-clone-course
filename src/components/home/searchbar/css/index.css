@@ -1,0 +1,31 @@
+.formContainer{
+    margin-top: 20px;
+}
+
+.inputEmail{
+    background-color:white;
+    border: 1px solid gray; 
+    width:50%;
+}
+
+.buttonStart{
+    width:40%;
+    height:50px;
+    font-size: 1.5em;
+    border-radius: 0;
+}
+
+.select-menu {
+    display: flex;
+    align-items: center;
+    border: solid 1px white;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    background-color: #191919;
+    padding: 9px;
+    font-weight:bold;
+}
+
+.buttonStart{
+    font-size: 1.4em;
+}

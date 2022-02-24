@@ -1,0 +1,13 @@
+@media screen and (max-width: 500px){
+    .inputEmail{
+        width:90%;
+
+    }
+    
+    .buttonStart{
+        width:50%;
+        height:40px;
+        font-size: 1em;
+        transform: translateY(50%);
+    }
+}
