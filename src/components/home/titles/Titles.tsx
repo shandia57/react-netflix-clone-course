@@ -1,6 +1,3 @@
-// Redux
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { setAppLanguage } from "../../../redux/reducers/language.reducer";
 
 // css
 import './css/titles.css';

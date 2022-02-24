@@ -1,9 +1,11 @@
 import './connection.css';
-
+import LoginContainer from '../../components/connection/LoginContainer';
 const Connection = () => {
     return (
-        <div>
-            <h1>Connection</h1>
+        <div className="background">
+            <div className="overlay">
+                <LoginContainer />
+            </div>
         </div>
     )
 }

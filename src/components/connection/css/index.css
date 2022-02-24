@@ -1,0 +1,11 @@
+.loginContainer{
+    background-color: rgba(0,0,0,0.8);
+    width: 25%;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.loginContainer h1{ 
+    color: #fff;
+    font-size: 2em;
+}
