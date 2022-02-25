@@ -47,7 +47,7 @@ const theme = createTheme({
     },
     status: {
         light: "#ffff",
-    }
+    },
 });
 
 export default theme;

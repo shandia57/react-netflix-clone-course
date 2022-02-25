@@ -1,12 +1,11 @@
 .input-bk-grey{
-    background-color: rgb(232, 240, 254);
-    color: white;
+    background-color: #333;
     border-radius: 5px;
     width: 100%;
-}
-
-.input-bk-grey:focus{
-    background-color: #333;
 
 }
 
+
+.input__label{
+    color: gray !important;
+}
