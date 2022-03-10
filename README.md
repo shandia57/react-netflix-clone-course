@@ -1,6 +1,6 @@
 # react-netflix-clone-course
 
-# ETUDIENT: Schmitt Alexandre
+# STUDIENT: Schmitt Alexandre
 
 ## Features
 
