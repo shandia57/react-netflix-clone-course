@@ -14,17 +14,14 @@ const Home = () => {
 
     return (
 
-        <div id="App" className="background">
-            <div className="overlay">
+        <div className="fullwidth" >
 
-                <Navbar />
+            <Navbar />
 
-                <div className="mainContainer">
-                    <Titles />
-                    <GetStarted />
-                </div>
+            <div className="mainContainer">
+                <Titles />
+                <GetStarted />
             </div>
-
         </div >
     )
 }

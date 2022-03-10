@@ -1,0 +1,39 @@
+.underForm{
+    font-size: 15px;
+    margin-top:15%;
+}
+.containerLogoFb{
+    display: flex;
+}
+
+.containerLogoFb p {
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.fb{
+    height: 20px;
+}
+
+.fbText{ 
+    line-height:20px;
+    margin-left: 10px;   
+}
+
+.subscription{
+    color: white;
+    font-weight: 700;
+}
+
+
+.learnMore{
+    color:#0071eb;
+    margin-left: 5px;
+}
+
+
+.textConnection{
+    color: rgb(136, 136, 136);
+    padding:0;
+}
+

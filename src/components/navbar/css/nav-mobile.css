@@ -3,13 +3,7 @@
     nav{
         text-align: center;
     }
-    .logoContainer{
-        width: 30%;
-        margin-top:10px;
-        margin-right:10px;
-        vertical-align: middle;
-    }
-    
+
     .containerRight{
         float: none;
     }
@@ -17,7 +11,4 @@
     .containerRight div + div{
         margin-left: 10px;
     }
-    
-
-
 }

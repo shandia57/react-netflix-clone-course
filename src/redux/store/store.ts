@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import languageReducer from "../reducers/language.reducer";
+import userReducer from "../reducers/user.reducer";
 
 const store = configureStore({
     reducer: {
-        language: languageReducer
+        language: languageReducer,
+        user: userReducer,
     }
 })
 
@@ -13,3 +15,19 @@ export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 
 export default store;
+
+
+// Redux -> à importer pour pouvoir dispatcher les datas
+// import { useAppDispatch, useAppSelector } from "./../../../redux/hooks";
+
+// EXEMPLE: import ce reducer pour pouvoir utiliser ses fonctions
+// import { setAppLanguage } from "./../../../redux/reducers/language.reducer";
+
+
+// ****** EXEMPLE
+// const dispacth = useAppDispatch();
+// const currentLanguage = useAppSelector((state) => state.language.appLanguage)
+
+// const handleLanguageChange = (e: any) => {
+//     dispacth(setAppLanguage(e.target.value))
+// }

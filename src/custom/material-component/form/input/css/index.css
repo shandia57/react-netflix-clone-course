@@ -8,3 +8,8 @@
 .input__label{
     color: gray !important;
 }
+
+.labelError{
+    color: #e87c03;
+    margin-top:8px;
+}

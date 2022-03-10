@@ -11,7 +11,8 @@ declare module '@mui/material/styles' {
     interface ThemeOptions {
         status?: {
             light?: string;
-        };
+        },
+
 
     }
 
@@ -48,6 +49,7 @@ const theme = createTheme({
     status: {
         light: "#ffff",
     },
+
 });
 
 export default theme;

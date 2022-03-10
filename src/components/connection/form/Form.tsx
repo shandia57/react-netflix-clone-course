@@ -1,43 +1,114 @@
+import React, { useState } from 'react';
+
+
 // css
 import './css/index.css';
 
 // il8n
 import translate from '../../../il8n/translate';
 
-// MUI
-import TextField from '@mui/material/TextField';
-import makeStyles from '@mui/material/styles/makeStyles';
+// Redux
+import { useAppDispatch } from "./../../../redux/hooks";
+import { setUserEmail } from "./../../../redux/reducers/user.reducer";
 
+
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+
+import Input from './../../../custom/material-component/form/input/Input';
+import CheckboxLabels from './../../../custom/material-component/form/checkbox/Checkbox';
+import UnderForm from '../underForm/UnderForm';
+
+
+const CustomButton = styled(Button)(() => ({
+    textTransform: "capitalize",
+    width: "100%",
+    padding: "15px",
+    '&.Mui-select': {
+        textTransform: "capitalize",
+        width: "100%",
+        padding: "15px",
+    },
+}));
+
+const emptyText = translate("emptyString");
+const labelText1 = translate("loginPlaceHolderEmail");
+const labelError1 = translate("labelErrorEmail");
+const labelText2 = translate("password");
+const labelError2 = translate("labelErrorPassword");
+const textButton = translate("signin");
 
 
 
 const Form = () => {
+    const dispacth = useAppDispatch();
+    const [emailErrorMessage, setEmailErrorMessage] = useState(emptyText);
+    const [passwordErrorMessage, setPasswordErrorMessage] = useState(emptyText);
 
-    const labelText1 = translate("loginPlaceHolderEmail");
-    const labelText2 = translate("password");
+    const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+[.]+[a-zA-Z]");
+    const phoneNumberRegex = new RegExp("[0-9]{10}");
+    const passwordRegex = new RegExp("[a-zA-Z0-9._-]{4,60}");
+
+    const onSubmit = (event: React.FormEvent) => {
+        let isValidForm = true;
+        const form = (document.getElementsByName('form')[0] as HTMLFormElement)
+        if (!form.email.value.match(emailRegex) && !form.email.value.match(phoneNumberRegex)) {
+            isValidForm = false;
+            setEmailErrorMessage(labelError1);
+        }
+        if (!form.password.value.match(passwordRegex)) {
+            isValidForm = false;
+            setPasswordErrorMessage(labelError2);
+        }
+        if (!isValidForm) {
+            event.preventDefault();
+        }
+        dispacth(setUserEmail(form.email.value))
+    }
+
 
 
     return (
 
         <div>
-            <form noValidate >
+            <form name="form" className="formConnection" onSubmit={onSubmit} action="films">
 
-                <TextField
-                    label={labelText1}
-                    color="warning"
-                    variant="filled"
-                    className="input-bk-grey"
-                    InputLabelProps={{ className: "input__label" }}
+                <div className="formInput">
+                    <div>
+                        <Input
+                            labelInput={labelText1}
+                            labelError={emailErrorMessage}
+                            name="email"
+                        />
+                    </div>
+                    <div>
+                        <Input
+                            labelInput={labelText2}
+                            labelError={passwordErrorMessage}
+                            name="password"
+                        />
+                    </div>
 
+                    <CustomButton
+                        variant="contained"
+                        className="buttonSignin"
+                        type="submit"
+                    >{textButton}
+                    </CustomButton></div>
+
+                <div className="underButton">
+                    <CheckboxLabels label={translate("remberMe")} />
+                    <p className="fakeLink">{translate("needHelp")}</p>
+                </div>
+
+                <UnderForm
+                    fbText={translate("loginSigninWithFacebook")}
+                    firstConnection={translate("loginFirstVisit")}
+                    signUp={translate("signUp")}
+                    smallText={translate("loginSmallText")}
+                    learnMore={translate("learnMore")}
                 />
 
-                <TextField
-                    label={labelText2}
-                    color="warning"
-                    variant="filled"
-                    className="input-bk-grey"
-                    InputLabelProps={{ className: "input__label" }}
-                />
             </form>
 
 
@@ -46,148 +117,3 @@ const Form = () => {
 }
 
 export default Form;
-
-
-// import * as React from 'react';
-// import { alpha, styled } from '@mui/material/styles';
-// import InputBase from '@mui/material/InputBase';
-// import Box from '@mui/material/Box';
-// import InputLabel from '@mui/material/InputLabel';
-// import TextField, { TextFieldProps } from '@mui/material/TextField';
-// import FormControl from '@mui/material/FormControl';
-// import { OutlinedInputProps } from '@mui/material/OutlinedInput';
-
-// const CssTextField = styled(TextField)({
-//   '& label.Mui-focused': {
-//     color: 'green',
-//   },
-//   '& .MuiInput-underline:after': {
-//     borderBottomColor: 'green',
-//   },
-//   '& .MuiOutlinedInput-root': {
-//     '& fieldset': {
-//       borderColor: 'red',
-//     },
-//     '&:hover fieldset': {
-//       borderColor: 'yellow',
-//     },
-//     '&.Mui-focused fieldset': {
-//       borderColor: 'green',
-//     },
-//   },
-// });
-
-// const BootstrapInput = styled(InputBase)(({ theme }) => ({
-//   'label + &': {
-//     marginTop: theme.spacing(3),
-//   },
-//   '& .MuiInputBase-input': {
-//     borderRadius: 4,
-//     position: 'relative',
-//     backgroundColor: theme.palette.mode === 'light' ? '#fcfcfb' : '#2b2b2b',
-//     border: '1px solid #ced4da',
-//     fontSize: 16,
-//     width: 'auto',
-//     padding: '10px 12px',
-//     transition: theme.transitions.create([
-//       'border-color',
-//       'background-color',
-//       'box-shadow',
-//     ]),
-//     // Use the system font instead of the default Roboto font.
-//     fontFamily: [
-//       '-apple-system',
-//       'BlinkMacSystemFont',
-//       '"Segoe UI"',
-//       'Roboto',
-//       '"Helvetica Neue"',
-//       'Arial',
-//       'sans-serif',
-//       '"Apple Color Emoji"',
-//       '"Segoe UI Emoji"',
-//       '"Segoe UI Symbol"',
-//     ].join(','),
-//     '&:focus': {
-//       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-//       borderColor: theme.palette.primary.main,
-//     },
-//   },
-// }));
-
-// const RedditTextField = styled((props: TextFieldProps) => (
-//   <TextField
-//     InputProps={{ disableUnderline: true } as Partial<OutlinedInputProps>}
-//     {...props}
-//   />
-// ))(({ theme }) => ({
-//   '& .MuiFilledInput-root': {
-//     border: '1px solid #e2e2e1',
-//     overflow: 'hidden',
-//     borderRadius: 4,
-//     backgroundColor: theme.palette.mode === 'light' ? '#fcfcfb' : '#2b2b2b',
-//     transition: theme.transitions.create([
-//       'border-color',
-//       'background-color',
-//       'box-shadow',
-//     ]),
-//     '&:hover': {
-//       backgroundColor: 'transparent',
-//     },
-//     '&.Mui-focused': {
-//       backgroundColor: 'transparent',
-//       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
-//       borderColor: theme.palette.primary.main,
-//     },
-//   },
-// }));
-
-// const ValidationTextField = styled(TextField)({
-//   '& input:valid + fieldset': {
-//     borderColor: 'green',
-//     borderWidth: 2,
-//   },
-//   '& input:invalid + fieldset': {
-//     borderColor: 'red',
-//     borderWidth: 2,
-//   },
-//   '& input:valid:focus + fieldset': {
-//     borderLeftWidth: 6,
-//     padding: '4px !important', // override inline-style
-//   },
-// });
-
-// export default function CustomizedInputs() {
-//   return (
-//     <Box
-//       component="form"
-//       noValidate
-//       sx={{
-//         display: 'grid',
-//         gridTemplateColumns: { sm: '1fr 1fr' },
-//         gap: 2,
-//       }}
-//     >
-//       <FormControl variant="standard">
-//         <InputLabel shrink htmlFor="bootstrap-input">
-//           Bootstrap
-//         </InputLabel>
-//         <BootstrapInput defaultValue="react-bootstrap" id="bootstrap-input" />
-//       </FormControl>
-//       <RedditTextField
-//         label="Reddit"
-//         defaultValue="react-reddit"
-//         id="reddit-input"
-//         variant="filled"
-//         style={{ marginTop: 11 }}
-//       />
-//       <CssTextField label="Custom CSS" id="custom-css-outlined-input" />
-//       <ValidationTextField
-//         label="CSS validation style"
-//         required
-//         variant="outlined"
-//         defaultValue="Success"
-//         id="validation-outlined-input"
-//       />
-//     </Box>
-//   );
-// }

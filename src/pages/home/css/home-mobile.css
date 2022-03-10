@@ -1,8 +1,5 @@
 @media screen and (max-width: 500px){
-    .overlay{
-        padding: 1%;
-    }
-    
+
     .mainContainer{
         width:100%;
         transform: translateY(20%);

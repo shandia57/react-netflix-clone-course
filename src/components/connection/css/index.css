@@ -1,11 +1,24 @@
 .loginContainer{
-    background-color: rgba(0,0,0,0.8);
-    width: 25%;
-    padding: 50px;
-    margin: 0 auto;
+    background-color: rgba(0,0,0,0.7);
+    width: 300px;
+    padding: 70px;
+    margin: 1% auto;
+    border-radius: 5px;
 }
 
 .loginContainer h1{ 
     color: #fff;
     font-size: 2em;
+    margin-bottom: 10%;
 }
+
+.formInput  div + div {
+    margin: 0.9em 0 2em 0;
+}
+
+.underButton {
+    display: flex;
+    justify-content: space-between;
+    color:rgb(199, 199, 199);
+}
+

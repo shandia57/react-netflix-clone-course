@@ -1,0 +1,27 @@
+footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    color: #8a8a8a;
+    padding: 15px 0 2% 0;
+    margin:0;
+}
+.footerContainer{
+    width:70%;
+    margin:0 auto;
+}
+
+.ulFooter{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom:2%;
+}
+.ulFooter li{
+    margin-right: 3em;
+    display: inline-flex;
+}
+
+.containerLanguage{
+    width: 105px;
+}

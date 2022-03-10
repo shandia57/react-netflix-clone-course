@@ -22,11 +22,9 @@ const GetStarted = () => {
 
     const dispacth = useAppDispatch();
     const currentLanguage = useAppSelector((state) => state.language.appLanguage)
-
     return (
         <div className="formContainer">
             <TextField size="medium" color="warning" className="inputEmail" label={translate("emailAddress")} variant="standard" />
-
             <Button variant="contained" endIcon={<FontAwesomeIcon icon={faAngleRight} />} className="buttonStart" >{translate("getStarted")}</Button>
         </div>
     );

@@ -1,17 +1,17 @@
+.containerNav{
+    padding: 1% 2% 1% 2%
+}
+
 .home-nav {
     width: 100%;
+
 }
 
 .home-nav div{
     display: inline-block;
 }
 
-.logoContainer{
-    width: 10%;    
-}
-.logo{
-    width: 100%;   
-}
+
 
 .containerRight{
     float: right;
@@ -25,13 +25,3 @@
     color: white;
 }
 
-.select-menu select {
-    background-color: rgba(19, 19, 19, 0.3);
-    color: white;
-    border: 0;
-}
-
-.iconGlobe{
-    color: white;
-
-}

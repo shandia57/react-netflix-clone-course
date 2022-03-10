@@ -15,17 +15,6 @@
     border-radius: 0;
 }
 
-.select-menu {
-    display: flex;
-    align-items: center;
-    border: solid 1px white;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    background-color: #191919;
-    padding: 9px;
-    font-weight:bold;
-}
-
 .buttonStart{
     font-size: 1.4em;
 }

@@ -1,0 +1,26 @@
+.select-menu {
+    display: flex;
+    align-items: center;
+    border: solid 1px white;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    background-color: #191919;
+    padding: 9px;
+    font-weight:bold;
+}
+
+
+.select-menu select {
+    background-color: rgba(19, 19, 19, 0.3);
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.iconGlobe{
+    color: white;
+}
+
+select:focus{
+    outline: none;
+}
