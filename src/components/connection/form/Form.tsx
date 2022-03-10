@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 // css
@@ -15,9 +16,10 @@ import { setUserEmail } from "./../../../redux/reducers/user.reducer";
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
-import Input from './../../../custom/material-component/form/input/Input';
-import CheckboxLabels from './../../../custom/material-component/form/checkbox/Checkbox';
+import Input from './../../layout/form/input/Input';
+import CheckboxLabels from './../../layout/form/checkbox/Checkbox';
 import UnderForm from '../underForm/UnderForm';
+
 
 
 const CustomButton = styled(Button)(() => ({
@@ -49,6 +51,8 @@ const Form = () => {
     const phoneNumberRegex = new RegExp("[0-9]{10}");
     const passwordRegex = new RegExp("[a-zA-Z0-9._-]{4,60}");
 
+    const navigate = useNavigate();
+
     const onSubmit = (event: React.FormEvent) => {
         let isValidForm = true;
         const form = (document.getElementsByName('form')[0] as HTMLFormElement)
@@ -62,8 +66,11 @@ const Form = () => {
         }
         if (!isValidForm) {
             event.preventDefault();
+        } else {
+            dispacth(setUserEmail(form.email.value))
+            navigate('/catalog')
         }
-        dispacth(setUserEmail(form.email.value))
+
     }
 
 
@@ -71,7 +78,7 @@ const Form = () => {
     return (
 
         <div>
-            <form name="form" className="formConnection" onSubmit={onSubmit} action="films">
+            <form name="form" className="formConnection" onSubmit={onSubmit}>
 
                 <div className="formInput">
                     <div>

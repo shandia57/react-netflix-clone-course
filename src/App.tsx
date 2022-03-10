@@ -14,7 +14,7 @@ import LayoutHome from './components/layout/LayoutHome';
 // pages
 import Home from './pages/home/Home';
 import Connection from './pages/connection/Connection';
-import FilmList from './pages/film-list/filmList';
+import Catalog from './pages/catalog/Catalog';
 
 // Theme
 import theme from './custom/theme/theme';
@@ -24,25 +24,25 @@ const App = () => {
 
     const appLanguage = useAppSelector((state) => state.language.appLanguage);
     return (
-        <div className="background">
-            <div className="overlay">
-                <ThemeProvider theme={theme}>
-                    <Il8nProvider locale={appLanguage}>
-                        <BrowserRouter>
-                            <Routes>
-                                <Route path="/" element={<LayoutHome />}>
-                                    <Route index element={<Home />} />
-                                    <Route path="connection" element={<Connection />} />
-                                    <Route path="films" element={<FilmList />} />
-                                </Route>
-                            </Routes>
-                        </BrowserRouter>
-                    </Il8nProvider>
 
-                </ThemeProvider>
-            </div>
+        <ThemeProvider theme={theme}>
+            <Il8nProvider locale={appLanguage}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<LayoutHome />}>
+                            <Route index element={<Home />} />
+                            <Route path="connection" element={<Connection />} />
+                            <Route path="catalog" element={<Catalog />} />
+                        </Route>
+                        <Route path="">
 
-        </div>
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </Il8nProvider>
+
+        </ThemeProvider>
+
 
 
 

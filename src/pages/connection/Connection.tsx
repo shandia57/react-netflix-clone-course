@@ -5,17 +5,17 @@ import Footer from '../../components/footer/Footer';
 
 const Connection = () => {
     return (
-
-        <div className="overlayBlack ">
-            <div className="containerNav">
-                <div className="home-nav">
-                    <Logo />
+        <div className="background">
+            <div className="overlay overlayBlack " >
+                <div className="containerNav">
+                    <div className="home-nav">
+                        <Logo />
+                    </div>
                 </div>
-            </div>
-            <LoginContainer />
-            <Footer />
-        </div>
-
+                <LoginContainer />
+                <Footer />
+            </div >
+        </ div >
 
 
     )

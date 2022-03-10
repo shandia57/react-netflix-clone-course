@@ -5,11 +5,12 @@ interface ILanguage {
 }
 
 const initialState: ILanguage = {
-    appLanguage: "fr-FR",
+    appLanguage: localStorage.getItem('language') ?? "fr-FR",
 }
 
 const setAppLanguageState = (state: ILanguage, action: any) => {
     state.appLanguage = action.payload;
+    localStorage.setItem('language', state.appLanguage);
 }
 
 //Definition des setter que tu veux rendre dispo

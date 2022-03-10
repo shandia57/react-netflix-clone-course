@@ -1,5 +1,5 @@
 // routing
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 // css
 import './css/nav.css';
@@ -11,11 +11,11 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
 // il8n
-import translate from '../../il8n/translate';
+import translate from './../../../il8n/translate';
 
 // components
-import SelectLanguage from './../../custom/material-component/selectLanguage/SelectLanguage';
-import Logo from '../layout/logo/Logo';
+import SelectLanguage from './../../layout/selectLanguage/SelectLanguage';
+import Logo from './../../layout/logo/Logo';
 
 const CustomButton = styled(Button)(() => ({
     textTransform: "capitalize",
@@ -31,11 +31,12 @@ const Navbar = () => {
         <div className="containerNav">
             <nav className="home-nav">
                 <Logo />
-                <div className="containerRight">
 
+                <div className="containerRight">
                     <SelectLanguage />
                     <div>
-                        <Link to="/connection">
+                        <Link to="/connection" >
+
                             <CustomButton
                                 variant="contained"
                                 color="primary"

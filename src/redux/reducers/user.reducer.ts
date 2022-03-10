@@ -5,14 +5,14 @@ interface IUser {
 }
 
 const initialState: IUser = {
-    email: "kiki",
+    email: localStorage.getItem('email') ?? '',
 }
 
 
 
 const setUserEmailState = (state: IUser, action: any) => {
     state.email = action.payload;
-    console.log("fils de pute de tes morts ", state.email);
+    localStorage.setItem('email', state.email);
 }
 
 export const userSlice = createSlice({

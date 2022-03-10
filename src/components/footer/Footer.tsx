@@ -5,7 +5,7 @@ import './css/index-tab.css';
 
 // il8n
 import translate from '../../il8n/translate';
-import SelectLanguage from '../../custom/material-component/selectLanguage/SelectLanguage';
+import SelectLanguage from './../layout/selectLanguage/SelectLanguage';
 
 
 const Footer = () => {

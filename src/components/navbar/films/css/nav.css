@@ -1,0 +1,32 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+header nav a {
+    color:white;
+    text-decoration: none;
+    font-size:15px;
+}
+
+.containerNetflix{
+    width: 20%;
+}
+
+
+.left div{
+    display: inline-block;
+}
+
+.leftLink{
+    margin-left: 15px;
+}
+
+.leftLink a {
+    margin-right: 20px;
+}
+
+.rightLink a{
+    margin-left: 20px;
+}

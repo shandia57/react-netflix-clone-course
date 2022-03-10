@@ -4,7 +4,7 @@ import './css/home-mobile.css';
 import './css/home-tab.css';
 
 
-import Navbar from '../../components/navbar/Navbar';
+import Navbar from '../../components/navbar/home/Navbar';
 import Titles from '../../components/home/titles/Titles';
 import GetStarted from '../../components/home/searchbar/GetStarted';
 
@@ -14,14 +14,16 @@ const Home = () => {
 
     return (
 
-        <div className="fullwidth" >
+        <div className="background">
+            <div className="overlay fullwidth">
 
-            <Navbar />
+                <Navbar />
 
-            <div className="mainContainer">
-                <Titles />
-                <GetStarted />
-            </div>
+                <div className="mainContainer">
+                    <Titles />
+                    <GetStarted />
+                </div>
+            </div >
         </div >
     )
 }

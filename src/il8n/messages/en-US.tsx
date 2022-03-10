@@ -8,10 +8,6 @@ const english = {
         'emailAddress': "Email address",
         'signin': "Sign in",
         'signUp': "Sign up now",
-
-
-
-        'signup': "Sign-up now",
         'password': "Password",
         'remberMe': "Remember me",
         'needHelp': "Need help?",
@@ -24,6 +20,12 @@ const english = {
         'privacy': "Privacy",
         'cookiePreferences': "Cookie Preferences",
         'corporateInfo': "Corporate Information",
+
+        'home': "Home",
+        'series': "Series",
+        'films': "Films",
+        'new&popular': "New & Popular",
+        'myList': "My list",
 
 
         'homeH1': "Unlimited movies, TV shows, and more.",

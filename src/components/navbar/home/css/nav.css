@@ -12,10 +12,23 @@
 }
 
 
+.test ul {
+    display:flex;
+    list-style: none;
+    color:white;
+    
+}
+
+.rightLink{
+    right:0;
+}
 
 .containerRight{
     float: right;
+    color:white
 }
+
+
 
 .containerRight div + div{
     margin-left: 2.5em;
@@ -24,4 +37,7 @@
 .optionInput{
     color: white;
 }
+
+
+
 

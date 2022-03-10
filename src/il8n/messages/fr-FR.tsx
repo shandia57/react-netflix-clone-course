@@ -8,8 +8,6 @@ const french = {
         'emailAddress': "Adresse e-mail",
         'signin': "S'identifier",
         'signUp': "Inscrivez-vous",
-
-        'signup': "Inscrivez-vous",
         'password': "Mot de passe",
         'remberMe': "Se souvenir de moi",
         'needHelp': "Besoin d'aide ? ",
@@ -22,6 +20,12 @@ const french = {
         'privacy': "Confidentialité",
         'cookiePreferences': "Préférences de cookies",
         'corporateInfo': "Mentions légales",
+
+        'home': "Accueil",
+        'series': "Séries",
+        'films': "Films",
+        'new&popular': "Nouveautés les plus regardées",
+        'myList': "Ma liste",
 
         'homeH1': "Films, séries TV et bien plus en illimité.",
         'homeH2': "Où que vous soyez. Annulez à tout moment.",
