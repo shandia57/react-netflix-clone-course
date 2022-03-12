@@ -8,6 +8,11 @@ body,html {
   
 }
 
+.appContainer{
+  margin-left:1%;
+  margin-right:1%;
+}
+
 .fullwidth{
   height: 100vh;
 

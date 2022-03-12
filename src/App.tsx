@@ -14,10 +14,12 @@ import LayoutHome from './components/layout/LayoutHome';
 // pages
 import Home from './pages/home/Home';
 import Connection from './pages/connection/Connection';
-import Catalog from './pages/catalog/Catalog';
+import Browse from './pages/browse/Browse';
 
 // Theme
 import theme from './custom/theme/theme';
+import Movies from "./pages/Movies/Movies";
+import TvShows from "./pages/tvShow/TvShows";
 
 
 const App = () => {
@@ -32,7 +34,9 @@ const App = () => {
                         <Route path="/" element={<LayoutHome />}>
                             <Route index element={<Home />} />
                             <Route path="connection" element={<Connection />} />
-                            <Route path="catalog" element={<Catalog />} />
+                            <Route path="browse" element={<Browse />} />
+                            <Route path="movies" element={<Movies />} />
+                            <Route path="tvShow" element={<TvShows />} />
                         </Route>
                         <Route path="">
 

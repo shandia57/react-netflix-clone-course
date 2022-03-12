@@ -27,9 +27,9 @@ const Navbar = () => {
                 </div>
 
                 <div className="leftLink">
-                    <a href="catalog">{translate("home")}</a>
-                    <a href="">{translate("series")}</a>
-                    <a href="">{translate("films")}</a>
+                    <a href="browse">{translate("home")}</a>
+                    <a href="tvShow">{translate("series")}</a>
+                    <a href="movies">{translate("films")}</a>
                     <a href="">{translate("new&popular")}</a>
                     <a href="">{translate("myList")}</a>
                 </div>

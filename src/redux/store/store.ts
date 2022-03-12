@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import languageReducer from "../reducers/language.reducer";
+import movieReducer from '../reducers/movie.reducer';
+import tvShowReducer from '../reducers/tvShow.reducer';
 import userReducer from "../reducers/user.reducer";
 
 const store = configureStore({
     reducer: {
         language: languageReducer,
         user: userReducer,
+        movie: movieReducer,
+        tvShow: tvShowReducer,
     }
 })
 

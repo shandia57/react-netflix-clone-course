@@ -68,7 +68,7 @@ const Form = () => {
             event.preventDefault();
         } else {
             dispacth(setUserEmail(form.email.value))
-            navigate('/catalog')
+            navigate('/browse')
         }
 
     }
