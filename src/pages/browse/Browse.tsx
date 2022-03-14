@@ -15,6 +15,7 @@ import Spinner from '../../components/layout/loading/spinner/Spinner';
 import RowPosters from '../../components/catalog/RowPosters';
 
 
+
 const Browse = () => {
     const dispatch = useAppDispatch();
     const popular = useAppSelector((state) => state.movie.popular)
@@ -29,9 +30,7 @@ const Browse = () => {
     const realityTvShow = useAppSelector((state) => state.tvShow.reality)
     const kidsTvShow = useAppSelector((state) => state.tvShow.kids)
 
-
     const isFetched = useAppSelector((state) => state.movie.isFetched)
-
 
 
     useEffect(() => {
@@ -50,6 +49,7 @@ const Browse = () => {
 
     return (
         <>
+
             <div className="appContainer">
                 <Navbar />
 

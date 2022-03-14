@@ -11,7 +11,6 @@ const apiTviShowsRequest = TVSHOWS_REQUEST;
 
 
 export const FetchAll = () => (dispatch: AppDispatch) => {
-
     Promise.all([
         axios.get(apiMoviesRequests.listPopular),
         axios.get(apiMoviesRequests.listAction),
@@ -41,12 +40,30 @@ export const FetchAll = () => (dispatch: AppDispatch) => {
             dispatch(tvShow.setTvShowKids(data[9].data.results));
         })
         .finally(() => {
-            setTimeout(() => {
-                dispatch(movie.setIsFetched(true))
-            }, 2000);
+            dispatch(movie.setIsFetched(true))
         })
         .catch((e) => {
             console.log(e);
         })
+
+}
+
+
+export const FetchSingle = (id: string) => (dispatch: AppDispatch) => {
+    console.log("id : ", id)
+    // dispatch(movie.setIsFetched(false))
+
+    // Promise.all([
+    //     axios.get(apiMoviesRequests.listPopular),
+    // ])
+    //     .then((data) => {
+    //         // dispatch(tvShow.setTvShowKids(data[9].data.results));
+    //     })
+    //     .finally(() => {
+    //         dispatch(movie.setIsFetched(true))
+    //     })
+    //     .catch((e) => {
+    //         console.log(e);
+    //     })
 
 }

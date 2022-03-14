@@ -2,11 +2,11 @@ import { AppDispatch } from "../../store/store";
 import * as tvShow from "../../reducers/tvShow.reducer";
 import TVSHOWS_REQUEST from "./../request/TvShowsRequest";
 import axios from "axios";
-
+import { useAppDispatch } from "./../../hooks";
 const apiTviShowsRequest = TVSHOWS_REQUEST;
 
-export const fetchTvShows = () => (dispatch: AppDispatch) => {
-    // console.log("API key = ", process.env.TMDA_API_KEY)
+export const fetchTvShows = () => () => {
+    const dispatch = useAppDispatch();
     Promise.all([
         axios.get(apiTviShowsRequest.listPopular),
         axios.get(apiTviShowsRequest.listAnimation),

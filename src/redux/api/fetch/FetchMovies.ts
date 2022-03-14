@@ -3,11 +3,11 @@ import * as movie from "../../reducers/movie.reducer";
 import * as tvShow from "../../reducers/tvShow.reducer";
 import MOVIES_REQUEST from "./../request/MoviesRequest"
 import axios from "axios";
-
+import { useAppDispatch } from "./../../hooks";
 const apiMoviesRequests = MOVIES_REQUEST;
 
-export const fetchMovies = () => (dispatch: AppDispatch) => {
-
+export const fetchMovies = () => () => {
+    const dispatch = useAppDispatch();
     Promise.all([
         axios.get(apiMoviesRequests.listPopular),
         axios.get(apiMoviesRequests.listAction),
