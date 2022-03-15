@@ -40,7 +40,9 @@ export const FetchAll = () => (dispatch: AppDispatch) => {
             dispatch(tvShow.setTvShowKids(data[9].data.results));
         })
         .finally(() => {
-            dispatch(movie.setIsFetched(true))
+            setTimeout(() => {
+                dispatch(movie.setIsFetched(true))
+            }, 2000)
         })
         .catch((e) => {
             console.log(e);

@@ -19,6 +19,7 @@ import Logo from './../../layout/logo/Logo';
 
 const CustomButton = styled(Button)(() => ({
     textTransform: "capitalize",
+
     '&.Mui-select': {
         textTransform: "capitalize",
     },

@@ -1,28 +1,27 @@
-
 import { createTheme } from '@mui/material/styles';
 
-declare module '@mui/material/styles' {
-    interface Theme {
-        status: {
-            light: string;
-        };
-    }
-    // allow configuration using `createTheme`
-    interface ThemeOptions {
-        status?: {
-            light?: string;
-        },
+// declare module '@mui/material/styles' {
+//     interface Theme {
+//         status: {
+//             light: string;
+//         };
+//     }
+//     // allow configuration using `createTheme`
+//     interface ThemeOptions {
+//         status?: {
+//             light?: string;
+//         },
 
 
-    }
+//     }
 
-}
+// }
 
-declare module "@mui/material/Button" {
-    interface ButtonPropsColorOverrides {
-        myAwesomeColor: true;
-    }
-}
+// declare module "@mui/material/Button" {
+//     interface ButtonPropsColorOverrides {
+//         myAwesomeColor: true;
+//     }
+// }
 
 
 const theme = createTheme({
@@ -45,9 +44,6 @@ const theme = createTheme({
             main: "#ffa00a"
         }
 
-    },
-    status: {
-        light: "#ffff",
     },
 
 });

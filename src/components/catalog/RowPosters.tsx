@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react';
 
-
+// CSS
 import './css/index.css';
 
-// modal
-
+// MUI component
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import ButtonUnstyled from '@mui/base/ButtonUnstyled';
+import Button from '@mui/material/Button/Button';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 
 
-import { FetchSingle } from "./../../redux/api/fetch/FectAll";
 import { useAppDispatch } from "../../redux/hooks";
-
 import axios from 'axios';
 
 
@@ -37,14 +39,11 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    // width: '50 %',
     bgcolor: '#141414',
-    // border: '1px solid #141414',
-    borderRadius: "20px ",
-    p: 1,
+    borderRadius: "5px ",
+    width: "800px",
+    // p: 1,
 };
-
-
 
 
 
@@ -59,6 +58,9 @@ const RowPosters = (props: Props) => {
         setOpen(true)
         const req = `https://api.themoviedb.org/3/movie/${e.target.id}?api_key=${process.env.REACT_APP_TMDA_API_KEY}&language=en-US`;
         axios.get(req).then((response: any) => {
+            // console.log(response.data)
+            let image = document.getElementById("modalImage");
+            (image as HTMLInputElement).src = basUrl + response.data.backdrop_path;
             console.log(response.data)
         })
 
@@ -72,11 +74,9 @@ const RowPosters = (props: Props) => {
         <>
             <div id="containerBrowser" className="containerBrowser" >
 
-
                 <h2 className="titleRow">{props.title}</h2>
                 <div className="row__posters">
                     {props.data.map((movie: Movie) =>
-
 
                         <img
                             id={movie.id + ""}
@@ -85,9 +85,6 @@ const RowPosters = (props: Props) => {
                             className={`row__poster`}
                             onClick={handleOpen}
                         />
-
-
-
                     )}
                 </div>
             </div>
@@ -98,7 +95,39 @@ const RowPosters = (props: Props) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <img src="https://static.bandainamcoent.eu/high/dragon-ball/dragonball-project-z/00-page-setup/dbzk_game-thumbnail.jpg" />
+                    <section className="sectionModal">
+                        <div>
+                            <img
+                                id="modalImage"
+                                src="" />
+                        </div>
+                        <div className="containerButtonModal">
+                            <div className="leftButtons">
+                                <Button
+                                    sx=
+                                    {{ bgColor: "white" }}
+                                >Lecture
+
+                                </Button>
+                                <Fab size="small" aria-label="add">
+                                    <AddIcon />
+                                </Fab>
+                                <Fab size="small">
+                                    <FontAwesomeIcon icon={faThumbsUp} />
+                                </Fab>
+                                <Fab size="small">
+                                    <FontAwesomeIcon icon={faThumbsDown} />
+                                </Fab>
+                            </div>
+                            <div className="rightButtons">
+                                <Fab size="small">
+                                    <FontAwesomeIcon icon={faVolumeHigh} />
+                                </Fab>
+                            </div>
+                        </div>
+
+
+                    </section>
                 </Box>
             </Modal>
         </>
@@ -106,3 +135,24 @@ const RowPosters = (props: Props) => {
 }
 
 export default RowPosters;
+
+// - Année de publication [âge] - nombres de saisons
+// - description
+
+// - Distribution
+// - Genres
+
+
+// Si films :
+
+// Recommandé à 96% - année [âge] durée
+// Description
+// Distribution
+// Genres
+
+// Titres similaires
+// Footer :
+// - Réalisateur
+// - Distribution
+// - Genres
+// - Catégories d'âges
