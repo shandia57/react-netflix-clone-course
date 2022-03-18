@@ -46,29 +46,35 @@ const Movies = () => {
                     title={translate('trendingNowMovie')}
                     data={popular}
                     isLargeRow={false}
+                    wichContent="movie"
                 />
 
                 <RowPosters
                     title={translate('actionsMovie')}
                     data={action}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="movie"
                 />
 
                 <RowPosters
                     title={translate('comedyMovie')}
                     data={comedy}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="movie"
                 />
 
                 <RowPosters
                     title={translate('familyMovie')}
                     data={family}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="movie"
+
                 />
                 <RowPosters
                     title={translate('horrorMovie')}
                     data={horror}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="movie"
                 />
 
             </div>

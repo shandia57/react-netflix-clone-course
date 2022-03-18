@@ -46,29 +46,39 @@ const TvShows = () => {
                     title={translate('trendingNowTvshow')}
                     data={popularTvShow}
                     isLargeRow={false}
+                    wichContent="tv"
+
                 />
 
                 <RowPosters
                     title={translate('animationTvShow')}
                     data={animationTvShow}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="tv"
+
                 />
 
                 <RowPosters
                     title={translate('familyTvShow')}
                     data={crimeTvShow}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="tv"
+
                 />
 
                 <RowPosters
                     title={translate('realityTvShow')}
                     data={realityTvShow}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="tv"
+
                 />
                 <RowPosters
                     title={translate('kidsTvShow')}
                     data={kidsTvShow}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="tv"
+
                 />
 
             </div>

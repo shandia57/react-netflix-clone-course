@@ -88,7 +88,10 @@ const english = {
         'kidsTvShow': "Kids Tv show",
         'realityTvShow': "Reality Tv show",
 
-
+        'average': "Average : ",
+        'production': "Production : ",
+        'genres': "Genres : ",
+        'seasons': "seasons",
 
 
 

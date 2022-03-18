@@ -5,8 +5,7 @@ import axios from "axios";
 import { useAppDispatch } from "./../../hooks";
 const apiTviShowsRequest = TVSHOWS_REQUEST;
 
-export const fetchTvShows = () => () => {
-    const dispatch = useAppDispatch();
+export const fetchTvShows = () => (dispatch: AppDispatch) => {
     Promise.all([
         axios.get(apiTviShowsRequest.listPopular),
         axios.get(apiTviShowsRequest.listAnimation),

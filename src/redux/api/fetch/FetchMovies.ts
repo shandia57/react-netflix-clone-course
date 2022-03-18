@@ -6,8 +6,7 @@ import axios from "axios";
 import { useAppDispatch } from "./../../hooks";
 const apiMoviesRequests = MOVIES_REQUEST;
 
-export const fetchMovies = () => () => {
-    const dispatch = useAppDispatch();
+export const fetchMovies = () => (dispatch: AppDispatch) => {
     Promise.all([
         axios.get(apiMoviesRequests.listPopular),
         axios.get(apiMoviesRequests.listAction),

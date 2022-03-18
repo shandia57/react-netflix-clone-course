@@ -51,21 +51,3 @@ export const FetchAll = () => (dispatch: AppDispatch) => {
 }
 
 
-export const FetchSingle = (id: string) => (dispatch: AppDispatch) => {
-    console.log("id : ", id)
-    // dispatch(movie.setIsFetched(false))
-
-    // Promise.all([
-    //     axios.get(apiMoviesRequests.listPopular),
-    // ])
-    //     .then((data) => {
-    //         // dispatch(tvShow.setTvShowKids(data[9].data.results));
-    //     })
-    //     .finally(() => {
-    //         dispatch(movie.setIsFetched(true))
-    //     })
-    //     .catch((e) => {
-    //         console.log(e);
-    //     })
-
-}

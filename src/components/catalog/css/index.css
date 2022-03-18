@@ -50,7 +50,10 @@
 .leftButtons{
     position:absolute;
     top: 80%;
+    left: 20px
 }
+
+
 
 .rightButtons{
     position:absolute;
@@ -58,8 +61,52 @@
     right: 40px;
 }
 
+.spaceBetweenButton{
+    margin-left: 10px;
+}
 
 #modalImage{
     width: 100%;
     border-radius: 5px 5px 0 0;
 }
+
+.containerDescriptionMovie{
+    margin: 3%;
+    display: flex;
+}
+
+.textButton{
+    margin-left:5px;
+    margin-right:5px;
+}
+
+
+
+.leftDescriptionMovie{
+    width: 70%;
+    margin-right: 20px;
+}
+
+.rightDescriptionMovie{
+    width: 30%;
+}
+
+.textSecondDescription{
+    text-align: justify;
+    text-justify: inter-word;
+  
+}
+
+
+.textFirstDescription span{
+    margin-right: 10px;
+}
+
+.average{
+    color:#46d369;
+}
+
+.titleRightDescription{
+    color:#777;
+}
+

@@ -88,6 +88,11 @@ const french = {
         'kidsTvShow': "Séries pour les enfants",
         'realityTvShow': "Séries de la téléréalités",
 
+        'average': "Note : ",
+        'production': "Production : ",
+        'genres': "Genres : ",
+        'seasons': "saisons",
+
 
 
         'homeH1': "Films, séries TV et bien plus en illimité.",

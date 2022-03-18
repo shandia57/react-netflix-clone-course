@@ -55,37 +55,50 @@ const Browse = () => {
                 <RowPosters
                     title={translate('trendingNowMovie')}
                     data={popular}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="movie"
                 />
                 <RowPosters
                     title={translate('trendingNowTvshow')}
                     data={popularTvShow}
-                    isLargeRow={false}
+                    isLargeRow={true}
+                    wichContent="tv"
+
                 />
                 <RowPosters
                     title={translate('actionsMovie')}
                     data={action}
                     isLargeRow={true}
+                    wichContent="movie"
+
                 />
                 <RowPosters
                     title={translate('crimeTvShow')}
                     data={crimeTvShow}
                     isLargeRow={true}
+                    wichContent="tv"
+
                 />
                 <RowPosters
                     title={translate('kidsTvShow')}
                     data={kidsTvShow}
                     isLargeRow={true}
+                    wichContent="tv"
+
                 />
                 <RowPosters
                     title={translate('comedyMovie')}
                     data={comedy}
                     isLargeRow={true}
+                    wichContent="movie"
+
                 />
                 <RowPosters
                     title={translate('familyMovie')}
                     data={family}
                     isLargeRow={true}
+                    wichContent="movie"
+
                 />
 
 
@@ -95,18 +108,23 @@ const Browse = () => {
                     title={translate('animationTvShow')}
                     data={animationTvShow}
                     isLargeRow={true}
+                    wichContent="tv"
+
                 />
 
                 <RowPosters
                     title={translate('horrorMovie')}
                     data={horror}
                     isLargeRow={true}
+                    wichContent="movie"
                 />
 
                 <RowPosters
                     title={translate('realityTvShow')}
                     data={realityTvShow}
                     isLargeRow={true}
+                    wichContent="tv"
+
                 />
 
             </div>
