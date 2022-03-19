@@ -1,16 +1,20 @@
 body,html {
   margin: 0;
   background-color: #141414;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+h1{
+  color:rgb(199, 199, 199);
 }
 
 .background{
   background-image: url('./assets/images/background.jpg');
-  
 }
 
 .appContainer{
   margin-left:1%;
-  /* margin-right:1%; */
 }
 
 .fullwidth{
@@ -29,19 +33,3 @@ body,html {
 .fakeLink:hover{
   text-decoration: underline;
 }
-
-
-
-/* @media screen and (max-width: 1100px) {
-  
-} */
-
-
-
-/* @media screen and (max-width: 500px){
-  .overlay{
-      padding: 1%;
-  }
-
-
-} */

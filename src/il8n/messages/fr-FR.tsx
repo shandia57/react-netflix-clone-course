@@ -21,6 +21,13 @@ const french = {
         'cookiePreferences': "Préférences de cookies",
         'corporateInfo': "Mentions légales",
 
+        'continue': "Continuer",
+        'cancel': "Annuler",
+        'name': "Nom",
+        'edit': "modifier",
+        'save': "Enregistrer",
+        'done': "Terminer",
+
         'home': "Accueil",
         'series': "Séries",
         'films': "Films",
@@ -105,6 +112,24 @@ const french = {
         'loginSmallText': "Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n'êtes pas un robot.",
         'labelErrorEmail': "Veuillez entrer une adresse e-mail ou un numéro de téléphone valide.",
         'labelErrorPassword': "Votre mot de passe doit comporter entre 4 et 60 caractères.",
+
+        // Profile
+        'manageProfile': "Gestion des profils :",
+        'profile1': "Profil 1",
+        'addNewProfile': "Ajouter un profil",
+        'addNewProfileText': "Ajouter un profil pour un nouvel utilisateur Netflix",
+        'updateProfile': "Modifier votre profil",
+        'child?': "Enfant ?",
+
+        // update profile
+        'language': "Langue",
+        'categoryAge': "Catégories d'âge",
+        'allAges': "Tous les âges",
+        'textAges': "Proposer les titres pour tous les âges à ce profil.",
+        'playbackCommands': "Commandes de lecture automatique",
+        'text1': "Lecture automatique de l'épisode suivant d'une série sur tous les appareils.",
+        'text2': "Lecture automatique des aperçus pendant la navigation sur tous les appareils.",
+
 
         'emptyString': " ",
     }

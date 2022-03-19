@@ -32,6 +32,8 @@ const Browse = () => {
 
     const isFetched = useAppSelector((state) => state.movie.isFetched)
 
+    const username = useAppSelector((state) => state.user.username);
+
     useEffect(() => {
 
         dispatch(FetchAll());

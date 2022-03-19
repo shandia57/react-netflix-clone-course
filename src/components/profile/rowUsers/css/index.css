@@ -1,0 +1,12 @@
+
+.userProfile{
+    text-align: center;
+    color: rgb(199, 199, 199);
+    display: inline-block;
+    vertical-align: text-top;
+    margin-right: 20px;
+}
+
+.userProfile img{
+    height: 150px;
+}

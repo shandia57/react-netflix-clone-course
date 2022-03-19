@@ -10,8 +10,7 @@ import translate from '../../../il8n/translate';
 
 // Redux
 import { useAppDispatch } from "./../../../redux/hooks";
-import { setUserEmail } from "./../../../redux/reducers/user.reducer";
-
+import { setUserEmail, setUsers, setUserName } from "./../../../redux/reducers/user.reducer";
 
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
@@ -43,9 +42,10 @@ const textButton = translate("signin");
 
 
 const Form = () => {
-    const dispacth = useAppDispatch();
+    const dispatch = useAppDispatch();
     const [emailErrorMessage, setEmailErrorMessage] = useState(emptyText);
     const [passwordErrorMessage, setPasswordErrorMessage] = useState(emptyText);
+
 
     const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+[.]+[a-zA-Z]");
     const phoneNumberRegex = new RegExp("[0-9]{10}");
@@ -67,7 +67,23 @@ const Form = () => {
         if (!isValidForm) {
             event.preventDefault();
         } else {
-            dispacth(setUserEmail(form.email.value))
+            const email = form.email.value
+            dispatch(setUserEmail(email))
+            dispatch(setUserName("defaultProfile"))
+            dispatch(setUsers(
+                {
+                    "account": email,
+                    "accountDetails":
+                        new Array(
+                            {
+                                "username": "defaultProfile",
+                                "image": "0.png",
+                            }
+                        )
+
+
+                },
+            ))
             navigate('/browse')
         }
 

@@ -1,0 +1,56 @@
+
+.newProfile{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 100%;
+    margin-top: 10%;
+}
+
+.headerNewProfile h1{
+    margin:0;
+    font-size: 50px;
+}
+
+.headerNewProfile p{
+    color: #666
+}
+
+.bodyNewProfile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.bodyNewProfile div {
+    margin-left: 30px;
+}
+
+.bodyNewProfile img{
+    height:150px;
+}
+
+
+.bodyNewProfile input{
+    width:300px;
+    background-color: #777;
+    border: none;
+    padding: 10px;
+    color:rgb(199, 199, 199);
+    
+
+}
+
+.bodyNewProfile input:focus{
+    outline:none;
+}
+
+.bodyNewProfile input::placeholder{
+    color:rgb(224, 224, 224);
+
+}
+
+.footerNewProfile{
+    margin-top: 20px;
+}

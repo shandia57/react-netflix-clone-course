@@ -15,11 +15,14 @@ import LayoutHome from './components/layout/LayoutHome';
 import Home from './pages/home/Home';
 import Connection from './pages/connection/Connection';
 import Browse from './pages/browse/Browse';
+import ChangeProfile from "./pages/profile/change/ManageProfile";
+import CreateUser from "./pages/profile/create/CreateUser";
 
 // Theme
 import theme from './custom/theme/theme';
 import Movies from "./pages/Movies/Movies";
 import TvShows from "./pages/tvShow/TvShows";
+import UpdateUser from "./pages/profile/update/UpdateUser";
 
 
 const App = () => {
@@ -37,6 +40,9 @@ const App = () => {
                             <Route path="browse" element={<Browse />} />
                             <Route path="movies" element={<Movies />} />
                             <Route path="tvShow" element={<TvShows />} />
+                            <Route path="profile/manage" element={<ChangeProfile />} />
+                            <Route path="profile/create" element={<CreateUser />} />
+                            <Route path="profile/update" element={<UpdateUser />} />
                         </Route>
                         <Route path="">
 

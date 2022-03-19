@@ -26,6 +26,9 @@ header nav a {
 .leftLink a {
     margin-right: 20px;
 }
+.rightLink{
+    display: flex
+}
 
 .rightLink a{
     margin-left: 20px;

@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+
+
 // css
 import './css/nav.css';
 import './css/nav-tab.css';
@@ -15,6 +18,10 @@ import Badge from '@mui/material/Badge';
 
 // il8n
 import translate from './../../../il8n/translate';
+import DropDown from '../../layout/dropDown/DropDrown';
+
+
+
 
 const Navbar = () => {
     return (
@@ -45,9 +52,10 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBell} />
                     </Badge>
                 </a>
-                <a href="">
+                {/* <Link to="/profile/manage">
                     <FontAwesomeIcon icon={faUser} />
-                </a>
+                </Link> */}
+                <DropDown />
             </nav>
 
         </header>

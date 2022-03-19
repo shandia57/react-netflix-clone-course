@@ -21,6 +21,14 @@ const english = {
         'cookiePreferences': "Cookie Preferences",
         'corporateInfo': "Corporate Information",
 
+        'continue': "Continue",
+        'cancel': "Cancel",
+        'name': "Name",
+        'edit': "Edit",
+        'save': "Save",
+        'done': "Done",
+
+
         'home': "Home",
         'series': "TV Shows",
         'films': "Movies",
@@ -105,6 +113,15 @@ const english = {
         'loginSmallText': "This page is protected by Google reCAPTCHA to ensure you're not a bot.",
         'labelErrorEmail': "Please enter a valid email or phone number.",
         'labelErrorPassword': "Your password must contain between 4 and 60 characters.",
+
+        // Profile
+        'manageProfile': "Manage your profile :",
+        'addNewProfile': "Add a new Profile",
+        'addNewProfileText': "Add new profile for a new Netflix user",
+        'updateProfile': "Update your profile",
+        'child?': "Enfant ?",
+
+        // update profile
 
 
         'emptyString': " ",

@@ -1,0 +1,76 @@
+.containerUpdateUser{
+    width: 40%;
+    margin: 0 auto;
+}
+
+
+.containerUpdateUser p{
+    color: rgb(214, 214, 214);
+    font-size:20px;
+}
+
+.containerUpdateUser h2{
+    color: rgb(156, 156, 156);
+    font-size: 30px;
+}
+
+.headerUpdateUser h1{
+    margin: 0;
+}
+
+
+.topBody{
+    display: flex;
+}
+
+.topBody, .middleRightBody, .footerRightBody, .footerUpdateUser{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.leftBody{
+    margin-right: 20px;
+}
+
+.leftBody img{
+    height: 100px;
+    border-radius: 8px;
+}
+
+.rightBody{
+    width: 100%;
+}
+
+.topRightBody{
+    margin-bottom: 30px;
+
+}
+
+.topRightBody input{
+    height: 30px;
+    width: 50%;
+}
+
+.topRightBody input{
+    height: 30px;
+    width: 50%;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    padding:5px 5px 5px 10px;
+    font-weight: bold;
+}
+
+.topRightBody .select-menu{
+    width: 100px;
+}
+
+
+
+.fakeButton{
+    border-radius: 3px;
+    background-color: rgb(59, 59, 59);
+    padding: 10px;
+    font-weight: 700;
+}
