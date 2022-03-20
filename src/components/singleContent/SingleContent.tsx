@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-// CSS
-import './css/index.css';
+import "./css/index.css";
+import axios from 'axios';
+
+import { useAppSelector } from "../../redux/hooks";
+import translate from "../../il8n/translate";
 
 // MUI component
 import Box from '@mui/material/Box';
@@ -17,23 +20,9 @@ import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import translate from "./../../il8n/translate";
-import axios from 'axios';
-import { setWatchlist } from "../../redux/reducers/user.reducer";
-
-interface Movie {
-    poster_path: string;
-    backdrop_path: string;
-    id: number;
-}
-
-
 interface Props {
-    title: Object;
-    data: Array<Movie>
-    isLargeRow: boolean;
-    wichContent: string;
+    type: string;
+    id: string;
 }
 
 const style = {
@@ -69,20 +58,35 @@ const CustomFab = styled(Fab)(() => ({
     }
 }))
 
-const RowPosters = (props: Props) => {
-    const basUrl = "https://image.tmdb.org/t/p/original/";
-    const dispatch = useAppDispatch();
+
+
+
+
+
+
+const SingleContent = (props: Props) => {
+
+    const [open, setOpen] = useState(false);
+    const [currentId, setCurrentId] = useState("");
+    const [urlImage, setUrlImage] = useState("");
+    const handleClose = () => setOpen(false);
 
     const appLanguage = useAppSelector((state) => state.language.appLanguage);
-    const [open, setOpen] = React.useState(false);
-    const [currentId, setCurrentId] = React.useState("");
+    const req = `https://api.themoviedb.org/3/${props.type}/${props.id}?api_key=${process.env.REACT_APP_TMDA_API_KEY}&language=${appLanguage}`;
+    const basUrl = "https://image.tmdb.org/t/p/original/";
 
     const handleOpen = (e: any) => {
         setOpen(true)
-        const req = `https://api.themoviedb.org/3/${props.wichContent}/${e.target.id}?api_key=${process.env.REACT_APP_TMDA_API_KEY}&language=${appLanguage}`;
-        setCurrentId(e.target.id);
-        axios.get(req).then((response: any) => {
-            // display image
+    }
+
+
+
+
+    axios.get(req)
+        .then((response: any) => {
+            setUrlImage(basUrl + response.data.backdrop_path);
+
+
             let image = document.getElementById("modalImage");
             (image as HTMLInputElement).src = basUrl + response.data.backdrop_path;
 
@@ -91,7 +95,7 @@ const RowPosters = (props: Props) => {
             const average = document.getElementById("dataAverage");
             (average as HTMLInputElement).innerText = response.data.vote_average + " / 10";
 
-            if (props.wichContent === 'movie') {
+            if (props.type === 'movie') {
 
                 const seasons = document.getElementById("seasons");
                 seasons!.style.display = "none";
@@ -107,7 +111,7 @@ const RowPosters = (props: Props) => {
                 const hours = Math.floor(response.data.runtime / 60);
                 const minutes = response.data.runtime % 60;
                 (runTime as HTMLInputElement).innerText = `${hours} h ${minutes}`;
-            } else if (props.wichContent === 'tv') {
+            } else if (props.type === 'tv') {
 
                 const runTime = document.getElementById("dataRunTime");
 
@@ -119,9 +123,6 @@ const RowPosters = (props: Props) => {
                 // display seasons
                 const numberSeasons = document.getElementById("numberSeason");
                 (numberSeasons as HTMLInputElement).innerText = response.data.number_of_seasons;
-
-
-
             }
 
             // display description text
@@ -146,43 +147,13 @@ const RowPosters = (props: Props) => {
                 arrayGenresName.push(response.data.genres[i].name);
             }
             (genres as HTMLInputElement).innerText = arrayGenresName.join(', ');
-            // console.log(response.data.genres);
         })
 
-    };
-
-    const addWatchlist = () => {
-        dispatch(setWatchlist(
-            {
-                type: props.wichContent,
-                id: currentId,
-            }
-        ))
-        alert("Ce contenu a été ajouté à votre liste")
-    }
-
-
-    const handleClose = () => setOpen(false);
 
 
     return (
         <>
-            <div id="containerBrowser" className="containerBrowser" >
-
-                <h2 className="titleRow">{props.title}</h2>
-                <div className="row__posters">
-                    {props.data.map((movie: Movie) =>
-
-                        <img
-                            id={movie.id + ""}
-                            key={movie.id}
-                            src={`${basUrl}${props.isLargeRow ? movie.backdrop_path : movie.poster_path}`}
-                            className={`row__poster`}
-                            onClick={handleOpen}
-                        />
-                    )}
-                </div>
-            </div>
+            <img onClick={handleOpen} src={urlImage} className={`rowPoster`} />
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -206,9 +177,7 @@ const RowPosters = (props: Props) => {
                                         <span className="spaceBetweenButton">Lecture</span>
 
                                     </CustomButton>
-                                    <CustomFab onClick={addWatchlist} size="small" aria-label="add">
-                                        <AddIcon />
-                                    </CustomFab>
+
                                     <CustomFab size="small">
                                         <FontAwesomeIcon icon={faThumbsUp} />
                                     </CustomFab>
@@ -262,25 +231,5 @@ const RowPosters = (props: Props) => {
     )
 }
 
-export default RowPosters;
 
-// - Année de publication [âge] - nombres de saisons
-// - description
-
-// - Distribution
-// - Genres
-
-
-// Si films :
-
-// Recommandé à 96% - année [âge] durée
-// Description
-// Distribution
-// Genres
-
-// Titres similaires
-// Footer :
-// - Réalisateur
-// - Distribution
-// - Genres
-// - Catégories d'âges
+export default SingleContent;

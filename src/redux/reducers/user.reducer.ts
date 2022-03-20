@@ -2,13 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface Users {
     account: string;
-    accountDetails: UserDetails[]
+    accountDetails: UserDetails[];
+}
+
+interface WatchList {
+    type: string;
+    id: string;
 }
 
 interface UserDetails {
     username: string;
     image: string;
-
+    watchList: WatchList[];
 }
 
 
@@ -20,8 +25,8 @@ interface IUser {
 
 const initialState: IUser = {
     email: localStorage.getItem('email') ?? '',
-    username: '',
-    users: [],
+    username: localStorage.getItem('username') ?? '',
+    users: JSON.parse(localStorage.getItem('users')!) ?? [],
 }
 
 const setUserEmailState = (state: IUser, action: any) => {
@@ -29,13 +34,16 @@ const setUserEmailState = (state: IUser, action: any) => {
     localStorage.setItem('email', state.email);
 }
 
-const setUsersState = (state: IUser, action: any) => {
-    state.users.push(action.payload);
-}
-
 const setUserNameState = (state: IUser, action: any) => {
     state.username = action.payload;
+    localStorage.setItem('username', state.username);
 }
+
+const setUsersState = (state: IUser, action: any) => {
+    state.users.push(action.payload);
+    localStorage.setItem('users', JSON.stringify(state.users));
+}
+
 
 const setUsersAccountDetailsState = (state: IUser, action: any) => {
     for (let i = 0; i < state.users.length; i++) {
@@ -43,6 +51,7 @@ const setUsersAccountDetailsState = (state: IUser, action: any) => {
             state.users[i].accountDetails.push(action.payload);
         }
     }
+    localStorage.setItem('users', JSON.stringify(state.users));
 }
 
 const updateUserNameState = (state: IUser, action: any) => {
@@ -56,6 +65,21 @@ const updateUserNameState = (state: IUser, action: any) => {
             }
         }
     }
+    localStorage.setItem('username', state.username);
+    localStorage.setItem('users', JSON.stringify(state.users));
+}
+
+const updateWatchlistState = (state: IUser, action: any) => {
+    for (let i = 0; i < state.users.length; i++) {
+        if (state.users[i].account === state.email) {
+            for (let j = 0; j < state.users[i].accountDetails.length; j++) {
+                if (state.users[i].accountDetails[j].username === state.username) {
+                    state.users[i].accountDetails[j].watchList.push(action.payload);
+                }
+            }
+        }
+    }
+    localStorage.setItem('users', JSON.stringify(state.users));
 }
 
 
@@ -69,6 +93,7 @@ export const userSlice = createSlice({
         setUsersAccountDetails: (state, action) => setUsersAccountDetailsState(state, action),
         setUserName: (state, action) => setUserNameState(state, action),
         updateUserName: (state, action) => updateUserNameState(state, action),
+        setWatchlist: (state, action) => updateWatchlistState(state, action),
     }
 
 })
@@ -79,7 +104,8 @@ export const
         setUsers,
         setUserName,
         updateUserName,
-        setUsersAccountDetails
+        setUsersAccountDetails,
+        setWatchlist,
     } = userSlice.actions;
 
 export default userSlice.reducer;

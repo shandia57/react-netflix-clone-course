@@ -122,6 +122,14 @@ const english = {
         'child?': "Enfant ?",
 
         // update profile
+        'language': "Language",
+        'categoryAge': "Ages categories",
+        'allAges': "All ages",
+        'textAges': "Offer titles for all ages to this profile..",
+        'playbackCommands': "Autoplay controls",
+        'text1': "Automatically plays the next episode of a series on all devices.",
+        'text2': "Automatic playback of previews during navigation on all devices.",
+
 
 
         'emptyString': " ",

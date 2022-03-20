@@ -31,11 +31,11 @@ const Browse = () => {
     const kidsTvShow = useAppSelector((state) => state.tvShow.kids)
 
     const isFetched = useAppSelector((state) => state.movie.isFetched)
+    const isFetchedTv = useAppSelector((state) => state.tvShow.isFetched)
 
     const username = useAppSelector((state) => state.user.username);
 
     useEffect(() => {
-
         dispatch(FetchAll());
 
     }, []);

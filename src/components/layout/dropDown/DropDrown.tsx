@@ -49,7 +49,6 @@ export default function DropDown() {
     const email = useAppSelector((state) => state.user.email);
     const username = useAppSelector((state) => state.user.username);
     const image = findUserImage(users, email, username);
-    console.log(image)
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);

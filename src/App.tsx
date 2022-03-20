@@ -23,6 +23,7 @@ import theme from './custom/theme/theme';
 import Movies from "./pages/Movies/Movies";
 import TvShows from "./pages/tvShow/TvShows";
 import UpdateUser from "./pages/profile/update/UpdateUser";
+import WatchList from "./pages/watchList/WatchList";
 
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
                             <Route path="browse" element={<Browse />} />
                             <Route path="movies" element={<Movies />} />
                             <Route path="tvShow" element={<TvShows />} />
+                            <Route path="watchList" element={<WatchList />} />
                             <Route path="profile/manage" element={<ChangeProfile />} />
                             <Route path="profile/create" element={<CreateUser />} />
                             <Route path="profile/update" element={<UpdateUser />} />

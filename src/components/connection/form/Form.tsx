@@ -78,6 +78,7 @@ const Form = () => {
                             {
                                 "username": "defaultProfile",
                                 "image": "0.png",
+                                "watchList": [],
                             }
                         )
 

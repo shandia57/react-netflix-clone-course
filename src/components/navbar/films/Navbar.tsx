@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -24,6 +25,9 @@ import DropDown from '../../layout/dropDown/DropDrown';
 
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
     return (
 
         <header className="containerNav">
@@ -34,11 +38,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="leftLink">
-                    <a href="browse">{translate("home")}</a>
-                    <a href="tvShow">{translate("series")}</a>
-                    <a href="movies">{translate("films")}</a>
-                    <a href="">{translate("new&popular")}</a>
-                    <a href="">{translate("myList")}</a>
+                    <Link to="/browse">{translate("home")}</Link>
+                    <Link to="/tvShow">{translate("series")}</Link>
+                    <Link to="/movies" >{translate("films")}</Link>
+                    <a href="#">{translate("new&popular")}</a>
+                    <Link to="/watchList">{translate("myList")}</Link>
                 </div>
 
 
@@ -46,15 +50,12 @@ const Navbar = () => {
 
             <nav className="rightLink">
                 <a href="#"><FontAwesomeIcon icon={faSearch} /></a>
-                <a href="">DIRECT</a>
-                <a href="">
+                <a href="#">DIRECT</a>
+                <a href="#">
                     <Badge badgeContent={4} color="primary">
                         <FontAwesomeIcon icon={faBell} />
                     </Badge>
                 </a>
-                {/* <Link to="/profile/manage">
-                    <FontAwesomeIcon icon={faUser} />
-                </Link> */}
                 <DropDown />
             </nav>
 

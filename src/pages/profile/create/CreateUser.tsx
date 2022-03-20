@@ -82,6 +82,7 @@ const CreateUser = () => {
                     dispatch(setUsersAccountDetails({
                         "username": userInput,
                         "image": `${userDetailsLength}.png`,
+                        "watchList": [],
                     }))
                     navigate('/profile/manage')
                 }
