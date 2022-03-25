@@ -2,6 +2,12 @@
 
 # STUDENT: Schmitt Alexandre
 
+#Requirement: 
+
+- Create a .env file with this following code : 
+
+REACT_APP_TMDA_API_KEY = YOUR_TMDA_API_KEY
+
 ## Features
 
 -   Login
