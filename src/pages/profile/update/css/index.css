@@ -74,3 +74,18 @@
     padding: 10px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 1700px) {
+    .headerUpdateUser h1{
+        margin: 0;
+        font-size: 40px;
+    }
+
+    .text-margin{
+        margin-bottom: 4%;
+        margin-top: 4%;
+    }
+
+
+
+}

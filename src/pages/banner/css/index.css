@@ -27,3 +27,16 @@
     right: 40px;
 }
 
+@media screen and (max-width: 1700px) {
+
+    .banner__left-buttons{
+        top: 80%;
+    }
+    
+    .banner__right-buttons{
+        top: 80%;
+    }
+    .textDescription{
+        top: 60%;
+    }
+}

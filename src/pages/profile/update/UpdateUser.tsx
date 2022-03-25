@@ -109,14 +109,14 @@ const UpdateUser = () => {
                         <div className="rightBody">
                             <div className="topRightBody">
                                 <input value={inputValue} onChange={handleChange} />
-                                <p>{translate('language')} :</p>
+                                <p className="text-margin">{translate('language')} :</p>
                                 <SelectLanguage />
                             </div>
                             <hr />
                             <div className="middleRightBody">
                                 <h2>{translate("categoryAge")}</h2>
                                 <p className="fakeButton">{translate("allAges")}</p>
-                                <p>{translate("textAges")}</p>
+                                <p className="text-margin">{translate("textAges")}</p>
                                 <CustomButtonSecond>
                                     {translate("edit")}
                                 </CustomButtonSecond>
