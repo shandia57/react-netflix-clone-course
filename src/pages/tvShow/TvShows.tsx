@@ -14,6 +14,7 @@ import Navbar from '../../components/navbar/films/Navbar';
 import Footer from '../../components/footer/Footer';
 import Spinner from '../../components/layout/loading/spinner/Spinner';
 import RowPosters from '../../components/catalog/RowPosters';
+import Banner from '../banner/Banner';
 
 const TvShows = () => {
     const dispatch = useAppDispatch();
@@ -39,8 +40,9 @@ const TvShows = () => {
 
     return (
         <>
+            <Banner />
             <div className="appContainer">
-                <Navbar />
+
 
                 <RowPosters
                     title={translate('trendingNowTvshow')}

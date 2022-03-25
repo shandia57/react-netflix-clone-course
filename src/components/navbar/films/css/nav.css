@@ -2,6 +2,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items:center;
+    position:absolute;
+    width:96%;
+    background:linear-gradient(rgba(17, 17, 17,5), rgba(17, 17, 17,0.2));
 }
 
 header nav a {
@@ -14,6 +17,10 @@ header nav a {
     width: 20%;
 }
 
+.left{
+    display: flex;
+    align-items:center;
+}
 
 .left div{
     display: inline-block;
@@ -27,7 +34,7 @@ header nav a {
     margin-right: 20px;
 }
 .rightLink{
-    display: flex
+    display: flex;
 }
 
 .rightLink a{

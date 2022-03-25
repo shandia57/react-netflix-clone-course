@@ -1,13 +1,12 @@
 import "./css/index.css";
 
-// components
-import Navbar from "../../components/navbar/films/Navbar";
 
 // redux
 import { useAppSelector } from "../../redux/hooks";
 import SingleContent from "../../components/singleContent/SingleContent";
 import translate from "./../../il8n/translate";
 import Footer from "../../components/footer/Footer";
+import Banner from "../banner/Banner";
 
 const findUserWatchList = (users: any[], email: string, username: string) => {
 
@@ -33,8 +32,8 @@ const WatchList = () => {
     const watchList = findUserWatchList(users, email, username)
     return (
 
-        <div className="fullwidth">
-            <Navbar />
+        <div >
+            <Banner />
             <div className="containerPosters">
                 <h1>{translate("myList")}</h1>
                 <div className="rowPosters">
@@ -44,7 +43,7 @@ const WatchList = () => {
                 </div>
 
             </div>
-
+            <Footer />
         </div>
 
     )

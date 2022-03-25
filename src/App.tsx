@@ -24,6 +24,7 @@ import Movies from "./pages/Movies/Movies";
 import TvShows from "./pages/tvShow/TvShows";
 import UpdateUser from "./pages/profile/update/UpdateUser";
 import WatchList from "./pages/watchList/WatchList";
+import Banner from "./pages/banner/Banner";
 
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
                             <Route path="profile/manage" element={<ChangeProfile />} />
                             <Route path="profile/create" element={<CreateUser />} />
                             <Route path="profile/update" element={<UpdateUser />} />
+                            <Route path="test" element={<Banner />} />
                         </Route>
                         <Route path="">
 

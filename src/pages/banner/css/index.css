@@ -1,0 +1,29 @@
+.img__banner{
+    width:100%;
+}
+
+.textDescription{
+    position:absolute;
+    top: 70%;
+    left: 20px;
+    width:800px;
+}
+
+.textDescription h1, p{
+    margin:0;
+    color: rgb(223, 223, 223);
+}
+
+
+.banner__left-buttons{
+    position:absolute;
+    top: 95%;
+    left: 20px
+}
+
+.banner__right-buttons{
+    position:absolute;
+    top: 95%;
+    right: 40px;
+}
+
